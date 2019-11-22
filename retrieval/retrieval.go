@@ -25,7 +25,7 @@ func Retrieve(filename string, queryKey string) ([]byte, error) {
 	// Iterate through all lines, assign all matching line's value to `match`
 	// Then return the last match. The last match holds the most recent write.
 	for _, line := range lines {
-		splitLine := bytes.SplitAfter(line, []byte(" "))
+		splitLine := bytes.SplitAfterN(line, []byte(" "), 2)
 		if len(splitLine) < 2 {
 			continue
 		}
