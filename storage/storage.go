@@ -8,14 +8,15 @@ import (
 )
 
 // Store appends the given data to the logFile
-func Store(fileName string, query commandparser.Query) error {
-	f, err := os.OpenFile(fmt.Sprintf("./%s", fileName),
-		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+func Store(storageFilePath string, query commandparser.Query) error {
+	f, err := os.OpenFile(storageFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return err
 	}
 	defer f.Close()
-	if _, err := f.WriteString(fmt.Sprintf("%s\n", fmt.Sprintf("%s %s", query.Key, query.Value))); err != nil {
+	appendLine := fmt.Sprintf("%s\n", fmt.Sprintf("%s %s", query.Key, query.Value))
+	_, err = f.WriteString(appendLine)
+	if err != nil {
 		return err
 	}
 	return nil

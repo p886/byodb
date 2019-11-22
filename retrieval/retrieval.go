@@ -3,7 +3,6 @@ package retrieval
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"io/ioutil"
 )
 
@@ -13,8 +12,8 @@ import (
 var ErrNoResult = errors.New("no result")
 
 // Retrieve gets the data associated with a key
-func Retrieve(filename string, queryKey string) ([]byte, error) {
-	contents, err := ioutil.ReadFile(fmt.Sprintf("./%s", filename))
+func Retrieve(storageFilePath string, queryKey string) ([]byte, error) {
+	contents, err := ioutil.ReadFile(storageFilePath)
 	if err != nil {
 		return []byte{}, err
 	}
