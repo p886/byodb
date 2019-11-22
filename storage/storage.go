@@ -14,7 +14,7 @@ func Store(storageFilePath string, query commandparser.Query) error {
 		return err
 	}
 	defer f.Close()
-	appendLine := fmt.Sprintf("%s\n", fmt.Sprintf("%s %s", query.Key, query.Value))
+	appendLine := fmt.Sprintf("%s %s\n", query.Key, query.Value)
 	_, err = f.WriteString(appendLine)
 	if err != nil {
 		return err

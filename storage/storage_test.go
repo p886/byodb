@@ -38,7 +38,7 @@ func TestStore(t *testing.T) {
 			err := Store(tmpFile.Name(), c.inputQuery)
 
 			if !reflect.DeepEqual(err, c.expectedError) {
-				t.Errorf("Expected error: %#v, got: %#v", c.expectedError, err)
+				t.Errorf("Expected error: %s, got: %s", c.expectedError.Error(), err.Error())
 			}
 
 			fileContents, err := ioutil.ReadFile(tmpFile.Name())

@@ -43,7 +43,7 @@ func TestRetrieve(t *testing.T) {
 
 			result, err := Retrieve(tmpFile.Name(), c.queryKey)
 			if !reflect.DeepEqual(err, c.expectedError) {
-				t.Errorf("Expected error: %#v, got: %#v", c.expectedError, err)
+				t.Errorf("Expected error: %s, got: %s", c.expectedError.Error(), err.Error())
 			}
 			if !reflect.DeepEqual(result, c.expectedResult) {
 				t.Errorf("Expected result: %#v, got: %#v", c.expectedResult, result)

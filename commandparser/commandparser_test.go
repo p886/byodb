@@ -52,7 +52,7 @@ func TestParseCommand(t *testing.T) {
 				t.Errorf("Expected query: %#v, got: %#v", c.expectedQuery, query)
 			}
 			if !reflect.DeepEqual(err, c.expectedError) {
-				t.Errorf("Expected error: %#v, got: %#v", c.expectedError, err)
+				t.Errorf("Expected error: %s, got: %s", c.expectedError.Error(), err.Error())
 			}
 		})
 	}
