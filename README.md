@@ -40,6 +40,7 @@ the database will respond with a success message containing the most recent valu
 
 ## TODOS
 
+- Proper console / REPL using a readline library
 - CLI interface
 - ACIDity
 - Indexing
