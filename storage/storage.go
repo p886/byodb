@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/p886/byo-database/commandparser"
+	"github.com/p886/byodb/commandparser"
 )
 
 // Store appends the given data to the logFile

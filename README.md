@@ -13,7 +13,7 @@ go build
 Run the executable:
 
 ```
-./byo-database
+./byodb
 ```
 
 ## Configuration

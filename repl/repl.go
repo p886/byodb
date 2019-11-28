@@ -7,9 +7,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/p886/byo-database/commandparser"
-	"github.com/p886/byo-database/retrieval"
-	"github.com/p886/byo-database/storage"
+	"github.com/p886/byodb/commandparser"
+	"github.com/p886/byodb/retrieval"
+	"github.com/p886/byodb/storage"
 )
 
 // Loop continually asks for user input and executes it
