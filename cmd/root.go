@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var cfgFile string
+var envFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -19,11 +19,7 @@ var rootCmd = &cobra.Command{
 	Long: `A key value database I built as a learning project.
 Not intended for production use.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		envFile, err := cmd.Flags().GetString("env")
-		if err != nil {
-			log.Fatalf("Error getting env flag: %s", err.Error())
-		}
-		err = godotenv.Load(envFile)
+		err := godotenv.Load(envFile)
 		if err != nil {
 			log.Fatalf("Error loading .env: '%s'\n", err.Error())
 		}
@@ -43,7 +39,5 @@ func Execute() {
 }
 
 func init() {
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().StringP("env", "e", ".env", "Location of .env file for config")
+	rootCmd.PersistentFlags().StringVarP(&envFile, "env", "e", ".env", "Location of .env file for config")
 }
