@@ -13,6 +13,12 @@ go build
 
 ### REPL
 
+The REPL is started by starting the program without any other CLI commands:
+
+```
+./byod
+```
+
 #### Store Data
 
 Inside the REPL type `PUT` followed by a key and a value:
