@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/p886/byo-database/commandparser"
+	"github.com/p886/byodb/commandparser"
 )
 
 func TestStore(t *testing.T) {
