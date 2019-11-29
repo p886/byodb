@@ -12,12 +12,12 @@ import (
 )
 
 func init() {
-	rootCmd.AddCommand(setCmd)
+	rootCmd.AddCommand(putCmd)
 }
 
-var setCmd = &cobra.Command{
-	Use:   "set [key] [value]",
-	Short: "Set data",
+var putCmd = &cobra.Command{
+	Use:   "put [key] [value]",
+	Short: "Put data",
 	Long:  `Persist value associated with key to the database`,
 	Args:  cobra.ExactValidArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
@@ -28,7 +28,7 @@ var setCmd = &cobra.Command{
 		storageFilePath := os.Getenv("STORAGE_FILE_PATH")
 		key := args[0]
 		value := args[1]
-		storage.Store(storageFilePath, commandparser.Query{Command: "SET", Key: key, Value: value})
+		storage.Store(storageFilePath, commandparser.Query{Command: "PUT", Key: key, Value: value})
 		if err != nil {
 			fmt.Printf("Error getting data with key '%s': %s\n", key, err.Error())
 			os.Exit(1)

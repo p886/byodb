@@ -36,7 +36,7 @@ the database will respond with a success message containing the most recent valu
 #### Store Data
 
 ```
-./byod set [key] [value]
+./byod put [key] [value]
 ```
 
 #### Retrieve Data
